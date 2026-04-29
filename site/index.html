@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>MonCafé</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="./js/load.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delivery_truck_speed"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Active Tab Nav-->
+      <nav class="navbar">
+        <div style="display: flex">
+          <h2 style="color: #000">MON</h2>
+          <h2 style="color: #005231">CAFÉ</h2>
+        </div>
+        <ul>
+          <a href="#" style="text-decoration: none; color: #000">
+            <li class="tab-link active">Home</li>
+          </a>
+          <a href="#" style="text-decoration: none; color: #000">
+            <li class="tab-link">Produtos</li>
+          </a>
+        </ul>
+        <ul>
+          <a href="#" style="text-decoration: none">
+            <ion-icon
+              class="tab-link"
+              name="bag-handle-outline"
+              style="font-size: 25px"
+            ></ion-icon>
+          </a>
+        </ul>
+      </nav>
+      <script src="script.js"></script>
+    </header>
+
+    <main>
+      <!-- HERO-->
+      <section class="home" id="home">
+        <div style="flex-direction: column; padding: 10rem">
+          <h4 class="sommelier">O SOMMELIER SENSORIAL</h4>
+          <h1 style="margin-top: 3rem">
+            O melhor
+            <h1>café</h1>
+            , entregue.
+          </h1>
+          <p style="margin-top: 5rem">
+            Descubra a arte da torra artesanal. Selecionamos grãos de origens
+            únicas para criar uma experiência sensorial inesquecível.
+          </p>
+
+          <a class="btn-comprar" href="#"> COMPRAR AGORA </a>
+          <a class="btn-nossosgraos" href="#"> NOSSOS GRÃOS </a>
+        </div>
+        <img src="./assets/hero.png" alt="" />
+      </section>
+
+      <!-- Achviments -->
+      <section class="achviments">
+        <div
+          style="
+            display: flex;
+            grid: 3;
+            justify-content: space-between;
+            border-width: 1px;
+            border-color: #000;
+          "
+        >
+          <div class="achviments-div">
+            <ion-icon name="cube-outline"></ion-icon>
+            <h2>Entrega Rápida</h2>
+            <p>
+              Torrado sob demanda e entregue em sua porta em tempo recorde para
+              garantir o frescor absoluto.
+            </p>
+          </div>
+
+          <div  class="achviments-div">
+            <ion-icon style="font-size: 45px" name="leaf-outline"></ion-icon>
+            <h2>Grãos Elevados</h2>
+            <p>
+              Trabalhamos diretamente com produtores locais para trazer apenas
+              os grãos de maior pontuação global.
+            </p>
+          </div>
+
+          <div  class="achviments-div">
+            <ion-icon
+              style="font-size: 45px"
+              name="checkmark-circle-outline"
+            ></ion-icon>
+            <h2>Cura Premium</h2>
+            <p>
+              Um processo rigoroso de curadoria que garante notas sensoriais
+              complexas e uma xícara perfeita, sempre.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div
+        class="navbar"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div style="display: flex; padding: 20px">
+          <h2 style="color: #000">MON</h2>
+          <h2 style="color: #005231">CAFÉ</h2>
+        </div>
+        <div>
+          <p style="font-weight: 100">
+            26 MonCafé. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
