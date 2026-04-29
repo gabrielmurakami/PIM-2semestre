@@ -53,9 +53,20 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem 0.5rem 1rem;
   display: inline-block;
-  color: #005231;
+  color: #007244;
   text-decoration: none;
   transition: 0.3s;
+}
+
+.home-title {
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.home-café {
+  font-size: 6rem;
+  font-style: italic;
+  color: #005231;
 }
 
 .btn-comprar {
@@ -109,9 +120,9 @@
   font-size: 45px;
 }
 
-.achviments-div{
-    padding: 5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+.achviments-div {
+  padding: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .achviments h2 {
   margin-top: 1.5rem;
