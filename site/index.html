@@ -28,10 +28,10 @@
           <h2 style="color: #005231">CAFÉ</h2>
         </div>
         <ul>
-          <a href="#" style="text-decoration: none; color: #000">
+          <a href="/site/index.html" style="text-decoration: none; color: #000">
             <li class="tab-link active">Home</li>
           </a>
-          <a href="#" style="text-decoration: none; color: #000">
+          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
             <li class="tab-link">Produtos</li>
           </a>
         </ul>
@@ -50,8 +50,11 @@
 
     <main>
       <!-- HERO-->
-      <section class="home">
-        <div style="flex-direction: column; padding: 10rem">
+      <section
+        class="home"
+        style="display: flex; justify-content: space-between; justify-content: center;"
+      >
+        <div style="flex-direction: column; padding: 2rem">
           <h4 class="sommelier">O SOMMELIER SENSORIAL</h4>
           <h1 class="home-title">
             O melhor
@@ -66,7 +69,11 @@
           <a class="btn-comprar" href="#"> COMPRAR AGORA </a>
           <a class="btn-nossosgraos" href="#"> NOSSOS GRÃOS </a>
         </div>
-        <img src="./assets/hero.png" alt="" />
+        <img
+          src="./assets/hero.png"
+          alt=""
+          style="display: flex; width: 30vw; margin-right: 3rem"
+        />
       </section>
 
       <!-- Achviments -->
@@ -111,7 +118,84 @@
           </div>
         </div>
       </section>
-    </main>
+
+
+      <!-- Products -->
+      <section class="products"">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-inline: 2rem; margin-top: 3rem;">
+          <div class="products-title">
+            <h1 class="products-title-one">ESTAÇÃO</h1>
+            <h1 class="products-title-two">EXCLUSIVA</h1>
+          </div>
+
+          <a href="./pages/produtos/index.html" style="text-decoration: none; color: #000; opacity: 0.3;">VIEW COLLECTION ></a>
+        </div>
+        <div
+          style="
+            display: flex;
+            grid: 3;
+            justify-content: space-between;
+            border-width: 1px;
+            border-color: #000;
+            margin-inline: 2rem;
+          "
+        >
+        <a href="#" style="text-decoration: none; color: #000">
+          <div class="product-div" >
+            <img src="./assets/product1.png" alt="" />
+            <h4>Novidade</h4>
+            <h2>MonCafé Blend</h2>
+            <p>
+              Uma mistura exclusiva de grãos selecionados, torrados para
+              revelar uma complexidade de sabores e aromas.
+            </p>
+          </div>
+        </a>
+          
+          <a href="#" style="text-decoration: none; color: #000">
+            <div class="product-div">
+              <img src="./assets/product2.png" alt="" />
+              <h4 style="color: #000000;opacity: 0.2;">BLEND ESPECIAL</h4>
+              <h2>MonCafé Single Origin</h2>
+              <p style="opacity: 0.5;">
+                Grãos de origem única, torrados para destacar as características
+                únicas de cada região produtora.
+              </p>
+            </div>
+          </a>
+          
+          <a href="#" style="text-decoration: none; color: #000">
+            <div class="product-div">
+              <img src="./assets/product3.png" alt="" />
+              <h4 style="color: #000000;opacity: 0.2;">ACESSÓRIOS</h4>
+              <h2>MonCafé Espresso</h2>
+              <p>
+                Grãos especialmente selecionados e torrados para criar um espresso
+                encorpado e cheio de sabor.
+              </p>
+            </div>
+          </a>
+
+
+        </div>        
+      </section>
+
+
+      <!-- About -->
+      <section class="about">
+       <div class="about-person">
+        <img src="./assets/person.png" alt="" />
+        <h2>MÁRIO SILVA</h2>
+        <p style="opacity: 0.5;">SOMMELIER DE CAFÉS</p>
+       </div>
+
+       <div class="about-reviewer">
+        <h2 style="margin-bottom: 2rem; color: #005231;">99</h2>
+        <h1>"O MonCafé mudou completamente minha rotina. Qualidade <h1 style="color: #005231;font-weight: bold;">surreal</h1>."</h1>
+       </div>
+      </section>
+
+
 
     <!-- FOOTER -->
     <footer>
