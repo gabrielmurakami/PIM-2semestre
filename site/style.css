@@ -52,6 +52,13 @@ body {
 
 /*--------------------- HERO ---------------------*/
 
+.home {
+  display: flex;
+  grid: 2;
+  justify-content: center;
+  align-items: center;
+}
+
 .sommelier {
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
