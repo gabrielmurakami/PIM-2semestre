@@ -32,11 +32,22 @@ body {
 }
 
 /*--------------------- HEADER ---------------------*/
+
+.navbar-title {
+  font-family: outfit, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 1.5rem;
+}
+
 .tab-link {
   color: #747874;
   padding: 14px 20px;
   cursor: pointer;
   transition: background 0.3s;
+  font-family: outfit, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 /* QUANDO ESTIVER SELECIONADO */
@@ -52,13 +63,6 @@ body {
 
 /*--------------------- HERO ---------------------*/
 
-.home {
-  display: flex;
-  grid: 2;
-  justify-content: center;
-  align-items: center;
-}
-
 .sommelier {
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -67,17 +71,31 @@ body {
   color: #007244;
   text-decoration: none;
   transition: 0.3s;
+  font-family: inter, sans-serif;
+  font-size: 0.8rem;
 }
 
 .home-title {
-  margin-top: 3rem;
-  font-size: 3rem;
+  font-size: 5rem;
+  font-family: outfit, sans-serif;
+  font-weight: 800;
+  margin-top: -2rem;
 }
 
-.home-café {
+.home-div-cafes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: -2rem;
+}
+
+.home-cafe {
   font-size: 6rem;
   font-style: italic;
+  font-family: outfit, sans-serif;
+  font-weight: 200;
   color: #005231;
+  font-family: light, sans-serif;
 }
 
 .btn-comprar {
@@ -114,6 +132,10 @@ body {
   background-color: #eee;
 }
 
+.home > img {
+  display: flex;
+  width: 30vw;
+}
 /*--------------------- HOME ---------------------*/
 .home {
   display: flex;
@@ -239,6 +261,47 @@ body {
 }
 
 /* =====================================================
+   HAMBURGER MENU
+   ===================================================== */
+
+/* Botão hamburger: escondido no desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  transform-origin: center;
+}
+
+/* Animação do X quando o menu está aberto */
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
    RESPONSIVIDADE
    ===================================================== */
 
@@ -251,7 +314,7 @@ body {
   }
 
   .home > img {
-    width: 60vw !important;
+    width: 80vw !important;
     margin-right: 0 !important;
     margin-bottom: 1rem;
   }
@@ -263,6 +326,31 @@ body {
     box-sizing: border-box;
     padding: 2rem;
     text-align: center;
+  }
+
+  .home-div-cafes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .home-div-cafes > h1 {
+    font-size: 6rem;
+    font-family: outfit, sans-serif;
+  }
+
+  .home-cafe {
+    font-weight: 400;
+    margin-top: -4rem;
+  }
+
+  .home-title {
+    margin-top: 0;
+    font-family: outfit, sans-serif;
+    font-size: 3rem;
+    margin-top: -2rem;
   }
 
   /* Fix: botão "NOSSOS GRÃOS" não estoura no tablet */
@@ -283,7 +371,7 @@ body {
     font-size: 4.5rem;
   }
 
-  /* Achievements */
+  /* -----------  Achievements ----------- */
   .achviments > div {
     flex-direction: column !important;
   }
@@ -338,17 +426,53 @@ body {
 
 /* ---------- Mobile (≤ 768px) ---------- */
 @media (max-width: 768px) {
-  /* Navbar */
+  /* Navbar vira linha com logo + carrinho + hamburger */
   .navbar {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
     padding: 16px;
+    position: relative;
   }
 
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
+  /* Links somem e viram menu dropdown — .navbar .nav-links para bater .navbar ul */
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    z-index: 99;
+  }
+
+  /* Menu aberto */
+  .navbar .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .nav-links a li {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  /* Carrinho fica antes do hamburger */
+  .nav-cart {
+    margin-left: auto;
+  }
+
+  /* Hamburger aparece */
+  .menu-toggle {
+    display: flex;
   }
 
   .tab-link {
