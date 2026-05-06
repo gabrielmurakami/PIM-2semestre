@@ -7,6 +7,10 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /*--------------------- NAVBAR ---------------------*/
 
 .navbar {
@@ -109,6 +113,21 @@
   grid: 2;
   width: 100vw;
   justify-content: space-between;
+  overflow-x: hidden;
+}
+
+/* Fix desktop: evita que a coluna de texto comprima abaixo do seu conteúdo */
+.home > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Fix global: parágrafos e textos não estouram o container */
+.home > div p,
+.home > div h1,
+.home > div h4 {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /*--------------------- ACHVIMENTS ---------------------*/
@@ -161,12 +180,26 @@
   margin-top: 1rem;
 }
 
+/* Fix: imagens dos produtos nunca ultrapassam o container */
+.product-div img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Fix: cada card (<a>) ocupa espaço igual na linha */
+.products > div:last-child > a {
+  flex: 1;
+  min-width: 0;
+}
+
 /*--------------------- ABOUT ---------------------*/
 
 .about {
   background-color: #000;
   display: flex;
   width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -196,4 +229,189 @@
   width: 5vw;
   border-radius: 50%;
   filter: grayscale(100%);
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+/* ---------- Tablet (≤ 1024px) ---------- */
+@media (max-width: 1024px) {
+  /* Hero */
+  .home {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .home > img {
+    width: 60vw !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Fix crítico: div do texto ocupa a largura total sem estourar */
+  .home > div {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  /* Fix: botão "NOSSOS GRÃOS" não estoura no tablet */
+  .btn-comprar,
+  .btn-nossosgraos {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .home-title {
+    font-size: 2.2rem;
+  }
+
+  .home-café {
+    font-size: 4.5rem;
+  }
+
+  /* Achievements */
+  .achviments > div {
+    flex-direction: column !important;
+  }
+
+  .achviments-div {
+    padding: 3rem 2rem;
+  }
+
+  /* Products */
+  .products-title-one,
+  .products-title-two {
+    font-size: 52px;
+  }
+
+  .products > div:last-child {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .products > div:last-child > a {
+    width: 90%;
+    flex: unset;
+  }
+
+  .product-div {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .product-div img {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* About */
+  .about {
+    flex-direction: column;
+    padding: 4rem 3rem;
+    text-align: center;
+  }
+
+  .about-person {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .about-person img {
+    width: 18vw;
+  }
+}
+
+/* ---------- Mobile (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .tab-link {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .home > img {
+    width: 80vw !important;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .home-café {
+    font-size: 3.5rem;
+  }
+
+  /* Achievements */
+  .achviments-div {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Products header */
+  .products-title-one,
+  .products-title-two {
+    font-size: 36px;
+  }
+
+  /* About */
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-person img {
+    width: 28vw;
+  }
+
+  .about h1 {
+    font-size: 1.3rem;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ---------- Mobile pequeno (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .home > img {
+    width: 92vw !important;
+  }
+
+  .home-café {
+    font-size: 2.8rem;
+  }
+
+  .products-title-one,
+  .products-title-two {
+    font-size: 28px;
+  }
+
+  .about-person img {
+    width: 35vw;
+  }
+
+  .navbar {
+    padding: 12px;
+  }
 }
