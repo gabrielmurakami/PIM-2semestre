@@ -17,8 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
+  padding: 1.5rem;
 }
 
 /* Base navigation styles */
@@ -30,9 +29,6 @@ body {
 .car {
   color: #fff;
 }
-
-/*--------------------- HEADER ---------------------*/
-
 .navbar-title {
   font-family: outfit, sans-serif;
   font-weight: 700;
@@ -48,12 +44,6 @@ body {
   font-family: outfit, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
-}
-
-/* QUANDO ESTIVER SELECIONADO */
-.tab-link.active {
-  color: #005231;
-  font-weight: bold;
 }
 
 /* QUANDO O HOVER NÃO ESTIVER ATIVO */
@@ -201,14 +191,23 @@ body {
 }
 
 .product-div h4 {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   color: #005231;
-}
-.product-div p {
-  opacity: 0.5;
-  margin-top: 1rem;
+  font-family: inter;
 }
 
+.product-div h2 {
+  font-size: 2rem;
+  font-family: outfit;
+  margin-top: 0.5rem;
+}
+
+.product-div p {
+  font-family: inter;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
 /* Fix: imagens dos produtos nunca ultrapassam o container */
 .product-div img {
   max-width: 100%;
@@ -258,6 +257,34 @@ body {
   width: 5vw;
   border-radius: 50%;
   filter: grayscale(100%);
+}
+
+/*--------------------- FOOTER ---------------------*/
+
+.footer {
+  background-color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer div {
+  display: flex;
+}
+
+.footer h2 {
+  font-family: outfit, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 1.5rem;
+}
+
+.footer p {
+  font-weight: 100;
+  opacity: 0.5;
+  font-family: inter;
+  font-weight: 200;
 }
 
 /* =====================================================
@@ -353,6 +380,10 @@ body {
     margin-top: -2rem;
   }
 
+  .home-p {
+    display: flex;
+    justify-content: center;
+  }
   /* Fix: botão "NOSSOS GRÃOS" não estoura no tablet */
   .btn-comprar,
   .btn-nossosgraos {
@@ -361,10 +392,6 @@ body {
     margin-left: 0;
     margin-top: 1rem;
     padding: 1rem 2rem;
-  }
-
-  .home-title {
-    font-size: 2.2rem;
   }
 
   .home-café {
@@ -485,9 +512,14 @@ body {
     width: 80vw !important;
   }
 
+  .home-div-cafes > h1 {
+    font-size: 6rem;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+  }
+
   .home-title {
-    font-size: 1.8rem;
-    margin-top: 1.5rem;
+    font-size: 3rem;
   }
 
   .home-café {

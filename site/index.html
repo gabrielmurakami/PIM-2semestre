@@ -20,10 +20,12 @@
     />
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
   </head>
   <body>
+    
     <header>
       <!-- Active Tab Nav-->
       <nav class="navbar">
@@ -31,9 +33,10 @@
           <h2 class="navbar-title" style="color: #000">MON</h2>
           <h2 class="navbar-title" style="color: #005231">CAFÉ</h2>
         </div>
+
         <ul class="nav-links">
           <a href="/site/index.html" style="text-decoration: none; color: #000">
-            <li class="tab-link active">HOME</li>
+            <li class="tab-link ">HOME</li>
           </a>
           <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
             <li class="tab-link">PRODUTOS</li>
@@ -48,6 +51,7 @@
             ></ion-icon>
           </a>
         </ul>
+
         <!-- Botão hamburger: só aparece no mobile -->
         <button class="menu-toggle" aria-label="Abrir menu">
           <span></span>
@@ -73,13 +77,15 @@
           </div>
           <h1 class="home-title" >ENTREGUE.</h1>
           
-          <p style="margin-top: 3rem; font-family: inter, sans-serif; font-size: 0.80rem;max-width: 28rem; font-weight: 300; font-size: 1.125rem;">
-            Descubra a arte da torra artesanal. Selecionamos grãos de origens
-            únicas para criar uma experiência sensorial inesquecível.
-          </p>
+          <div class="home-p">
+            <p style="margin-top: 3rem; font-family: inter, sans-serif; font-size: 0.80rem;max-width: 28rem; font-weight: 300; font-size: 1.125rem;">
+              Descubra a arte da torra artesanal. Selecionamos grãos de origens
+              únicas para criar uma experiência sensorial inesquecível.
+            </p>
+          </div>
 
-          <a class="btn-comprar" href="#"> COMPRAR AGORA </a>
-          <a class="btn-nossosgraos" href="#"> NOSSOS GRÃOS </a>
+          <a class="btn-comprar" href="/site/pages/produtos/index.html"> COMPRAR AGORA </a>
+          <a class="btn-nossosgraos" href="/site/pages/produtos/index.html"> NOSSOS GRÃOS </a>
         </div>
         <img
           src="./assets/hero.png"
@@ -127,38 +133,36 @@
 
 
       <!-- Products -->
-      <section class="products"">
+      <section class="products">
         <div style="display: flex; justify-content: space-between; align-items: center; padding-inline: 2rem; margin-top: 3rem;">
           <div class="products-title">
             <h1 class="products-title-one">ESTAÇÃO</h1>
             <h1 class="products-title-two">EXCLUSIVA</h1>
           </div>
 
-          <a href="./pages/produtos/index.html" style="text-decoration: none; color: #000; opacity: 0.3;">VIEW COLLECTION ></a>
+          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000; opacity: 0.3;">VIEW COLLECTION ></a>
         </div>
         <div
           style="
             display: flex;
             grid: 3;
             justify-content: space-between;
-            border-width: 1px;
-            border-color: #000;
-            margin-inline: 2rem;
+            gap: 2rem;
           "
         >
-        <a href="#" style="text-decoration: none; color: #000">
+        <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
           <div class="product-div" >
             <img src="./assets/product1.png" alt="" />
-            <h4>Novidade</h4>
+            <h4 >Novidade</h4>
             <h2>MonCafé Blend</h2>
-            <p>
+            <p style="opacity: 0.5;">
               Uma mistura exclusiva de grãos selecionados, torrados para
               revelar uma complexidade de sabores e aromas.
             </p>
           </div>
         </a>
           
-          <a href="#" style="text-decoration: none; color: #000">
+          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
             <div class="product-div">
               <img src="./assets/product2.png" alt="" />
               <h4 style="color: #000000;opacity: 0.2;">BLEND ESPECIAL</h4>
@@ -170,12 +174,12 @@
             </div>
           </a>
           
-          <a href="#" style="text-decoration: none; color: #000">
+          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
             <div class="product-div">
               <img src="./assets/product3.png" alt="" />
               <h4 style="color: #000000;opacity: 0.2;">ACESSÓRIOS</h4>
               <h2>MonCafé Espresso</h2>
-              <p>
+              <p  style="opacity: 0.5;">
                 Grãos especialmente selecionados e torrados para criar um espresso
                 encorpado e cheio de sabor.
               </p>
@@ -196,8 +200,12 @@
        </div>
 
        <div class="about-reviewer">
-        <h2 style="margin-bottom: 2rem; color: #005231;">99</h2>
-        <h1>"O MonCafé mudou completamente minha rotina. Qualidade <h1 style="color: #005231;font-weight: bold;">surreal</h1>."</h1>
+        <h2 style="margin-bottom: 1.5rem; color: #005231; font-size: 2rem;">99</h2>
+        <h1>"O MonCafé mudou completamente minha rotina. Qualidade</h1>
+        <div style="display: flex; ">
+          <h1 style="color: #005231;font-weight: bold;">surreal </h1>
+          <h1> ."</h1>
+        </div>
        </div>
       </section>
 
@@ -205,21 +213,14 @@
 
     <!-- FOOTER -->
     <footer>
-      <div
-        class="navbar"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div style="display: flex; padding: 20px">
+      <div class="footer">
+        <div>
           <h2 style="color: #000">MON</h2>
           <h2 style="color: #005231">CAFÉ</h2>
         </div>
         <div>
-          <p style="font-weight: 100">
-            26 MonCafé. Todos os direitos reservados.
+          <p>
+            2026 MonCafé. Todos os direitos reservados.
           </p>
         </div>
       </div>
