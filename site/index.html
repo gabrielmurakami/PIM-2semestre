@@ -18,14 +18,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delivery_truck_speed"
     />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    
     <header>
       <!-- Active Tab Nav-->
       <nav class="navbar">
@@ -36,9 +39,12 @@
 
         <ul class="nav-links">
           <a href="/site/index.html" style="text-decoration: none; color: #000">
-            <li class="tab-link ">HOME</li>
+            <li class="tab-link">HOME</li>
           </a>
-          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000"
+          >
             <li class="tab-link">PRODUTOS</li>
           </a>
         </ul>
@@ -63,58 +69,75 @@
     </header>
 
     <main>
-
-        <!-- Início do VLibras -->
-        <div vw class="enabled">
-          <div vw-access-button class="active"></div>
-          <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-          </div>
+      <!-- Início do VLibras -->
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
         </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-          new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
-        <!-- Fim do VLibras -->
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
+      <!-- Fim do VLibras -->
 
       <!-- HERO-->
       <section
         class="home"
-        style="display: flex; justify-content: space-between; justify-content: center;"
+        style="
+          display: flex;
+          justify-content: space-between;
+          justify-content: center;
+        "
       >
-        <div style="flex-direction: column; padding: 2rem;">
+        <div style="flex-direction: column; padding: 2rem">
           <h4 class="sommelier">O SOMMELIER SENSORIAL</h4>
-          <h1 class="home-title" style="margin-top: 1rem;">O MELHOR</h1>
+          <h1 class="home-title" style="margin-top: 1rem">O MELHOR</h1>
           <div class="home-div-cafes">
             <h1 class="home-cafe">CAFÉ</h1>
             <h1 class="home-cafe" style="color: #000; font-weight: 800">,</h1>
           </div>
-          <h1 class="home-title" >ENTREGUE.</h1>
-          
+          <h1 class="home-title">ENTREGUE.</h1>
+
           <div class="home-p">
-            <p style="margin-top: 3rem; font-family: inter, sans-serif; font-size: 0.80rem;max-width: 28rem; font-weight: 300; font-size: 1.125rem;">
+            <p
+              style="
+                margin-top: 3rem;
+                font-family: inter, sans-serif;
+                font-size: 0.8rem;
+                max-width: 28rem;
+                font-weight: 300;
+                font-size: 1.125rem;
+              "
+            >
               Descubra a arte da torra artesanal. Selecionamos grãos de origens
               únicas para criar uma experiência sensorial inesquecível.
             </p>
           </div>
 
-          <a class="btn-comprar" href="/site/pages/produtos/index.html"> COMPRAR AGORA </a>
-          <a class="btn-nossosgraos" href="/site/pages/produtos/index.html"> NOSSOS GRÃOS </a>
+          <a class="btn-comprar" href="/site/pages/produtos/index.html">
+            COMPRAR AGORA
+          </a>
+          <a class="btn-nossosgraos" href="/site/pages/produtos/index.html">
+            NOSSOS GRÃOS
+          </a>
         </div>
-        <img
-          src="./assets/hero.png"
-          alt=""
-        />  
+        <img src="./assets/hero.png" alt="" />
       </section>
 
       <!-- Achviments -->
-      <section class="achviments" style="border: none;">
-        <div 
-          style="display: flex; justify-content: space-between; border-width: 1px; border-color: #000;
+      <section class="achviments" style="border: none">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            border-width: 1px;
+            border-color: #000;
           "
         >
           <div class="achviments-div">
-            <ion-icon name="cube-outline" style="color: #005231;"></ion-icon>
+            <ion-icon name="cube-outline" style="color: #005231"></ion-icon>
             <h2>Entrega Rápida</h2>
             <p>
               Torrado sob demanda e entregue em sua porta em tempo recorde para
@@ -123,7 +146,10 @@
           </div>
 
           <div class="achviments-div">
-            <ion-icon style="font-size: 45px; color: #005231;" name="leaf-outline"></ion-icon>
+            <ion-icon
+              style="font-size: 45px; color: #005231"
+              name="leaf-outline"
+            ></ion-icon>
             <h2>Grãos Elevados</h2>
             <p>
               Trabalhamos diretamente com produtores locais para trazer apenas
@@ -133,7 +159,7 @@
 
           <div class="achviments-div">
             <ion-icon
-              style="font-size: 45px; color: #005231;"
+              style="font-size: 45px; color: #005231"
               name="checkmark-circle-outline"
             ></ion-icon>
             <h2>Cura Premium</h2>
@@ -145,16 +171,27 @@
         </div>
       </section>
 
-
       <!-- Products -->
       <section class="products">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding-inline: 2rem; margin-top: 3rem;">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 2rem;
+            margin-top: 3rem;
+          "
+        >
           <div class="products-title">
             <h1 class="products-title-one">ESTAÇÃO</h1>
             <h1 class="products-title-two">EXCLUSIVA</h1>
           </div>
 
-          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000; opacity: 0.3;">VIEW COLLECTION ></a>
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000; opacity: 0.3"
+            >VIEW COLLECTION ></a
+          >
         </div>
         <div
           style="
@@ -164,67 +201,78 @@
             gap: 2rem;
           "
         >
-        <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
-          <div class="product-div" >
-            <img src="./assets/product1.png" alt="" />
-            <h4 >Novidade</h4>
-            <h2>MonCafé Blend</h2>
-            <p style="opacity: 0.5;">
-              Uma mistura exclusiva de grãos selecionados, torrados para
-              revelar uma complexidade de sabores e aromas.
-            </p>
-          </div>
-        </a>
-          
-          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000"
+          >
+            <div class="product-div">
+              <img src="./assets/product1.png" alt="" />
+              <h4>Novidade</h4>
+              <h2>YIEGGACHFFE</h2>
+              <p style="opacity: 0.5">
+                Uma mistura exclusiva de grãos selecionados, torrados para
+                revelar uma complexidade de sabores e aromas.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000"
+          >
             <div class="product-div">
               <img src="./assets/product2.png" alt="" />
-              <h4 style="color: #000000;opacity: 0.2;">BLEND ESPECIAL</h4>
-              <h2>MonCafé Single Origin</h2>
-              <p style="opacity: 0.5;">
+              <h4 style="color: #000000; opacity: 0.2">BLEND ESPECIAL</h4>
+              <h2>THE CLASSIC</h2>
+              <p style="opacity: 0.5">
                 Grãos de origem única, torrados para destacar as características
                 únicas de cada região produtora.
               </p>
             </div>
           </a>
-          
-          <a href="/site/pages/produtos/index.html" style="text-decoration: none; color: #000">
+
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000"
+          >
             <div class="product-div">
               <img src="./assets/product3.png" alt="" />
-              <h4 style="color: #000000;opacity: 0.2;">ACESSÓRIOS</h4>
-              <h2>MonCafé Espresso</h2>
-              <p  style="opacity: 0.5;">
-                Grãos especialmente selecionados e torrados para criar um espresso
-                encorpado e cheio de sabor.
+              <h4 style="color: #000000; opacity: 0.2">ACESSÓRIOS</h4>
+              <h2>BREW KIT PRO</h2>
+              <p style="opacity: 0.5">
+                Grãos especialmente selecionados e torrados para criar um
+                espresso encorpado e cheio de sabor.
               </p>
             </div>
           </a>
-
-
-        </div>        
+        </div>
       </section>
-
 
       <!-- About -->
       <section class="about">
-       <div class="about-person">
-        <img src="./assets/person.png" alt="" />
-        <h2>MÁRIO SILVA</h2>
-        <p style="opacity: 0.5;">SOMMELIER DE CAFÉS</p>
-       </div>
-
-       <div class="about-reviewer">
-        <h2 style="margin-bottom: 1.5rem; color: #005231; font-size: 2rem;">99</h2>
-        <h1>"O MonCafé mudou completamente minha rotina. Qualidade</h1>
-        <div style="display: flex; ">
-          <h1 style="color: #005231;font-weight: bold;">surreal </h1>
-          <h1> ."</h1>
+        <div class="about-person">
+          <img src="./assets/person.png" alt="" />
+          <h2>MÁRIO SILVA</h2>
+          <p style="opacity: 0.5">SOMMELIER DE CAFÉS</p>
         </div>
-       </div>
+
+        <div class="about-reviewer">
+          <h2 style="margin-bottom: 1.5rem; color: #005231; font-size: 2rem">
+            99
+          </h2>
+          <h1>"O MonCafé mudou completamente minha rotina. Qualidade</h1>
+          <div style="display: flex">
+            <h1 style="color: #005231; font-weight: bold">surreal</h1>
+            <h1>."</h1>
+          </div>
+        </div>
       </section>
 
-
-
+      <a href="https://wa.me" class="botao-flutuante" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+      </a>
+    </main>
+    
     <!-- FOOTER -->
     <footer>
       <div class="footer">
@@ -233,9 +281,7 @@
           <h2 style="color: #005231">CAFÉ</h2>
         </div>
         <div>
-          <p>
-            2026 MonCafé. Todos os direitos reservados.
-          </p>
+          <p>2026 MonCafé. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

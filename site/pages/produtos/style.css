@@ -123,6 +123,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .product-div h4 {
@@ -166,12 +167,34 @@ body {
   text-align: center;
   font-family: outfit;
   font-weight: 600;
+  margin-top: auto;
 }
 
 .btn-add-car:hover {
   cursor: pointer;
   color: #fff;
   background-color: #005231;
+}
+
+.botao-flutuante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366; /* Ex: Cor WhatsApp */
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  text-decoration: none;
+  line-height: 60px; /* Centraliza o ícone verticalmente */
+}
+
+.botao-flutuante:hover {
+  background-color: #128c7e;
 }
 
 /*--------------------- FOOTER ---------------------*/
