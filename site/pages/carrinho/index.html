@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>MonCafé — Carrinho</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="/site/pages/carrinho/cart.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar">
+        <div style="display:flex">
+          <h2 class="navbar-title" style="color:#000">MON</h2>
+          <h2 class="navbar-title" style="color:#005231">CAFÉ</h2>
+        </div>
+        <ul class="nav-links">
+          <a href="/site/index.html" style="text-decoration:none;color:#000">
+            <li class="tab-link">HOME</li>
+          </a>
+          <a href="/site/pages/produtos/index.html" style="text-decoration:none;color:#000">
+            <li class="tab-link">PRODUTOS</li>
+          </a>
+        </ul>
+        <ul class="nav-cart">
+          <a href="/site/pages/carrinho/index.html" style="text-decoration:none;position:relative;display:flex;align-items:center">
+            <ion-icon class="tab-link" name="bag-handle-outline" style="font-size:25px;color:#005231"></ion-icon>
+            <span id="cart-badge">0</span>
+          </a>
+        </ul>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <script>
+      // Hamburger
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".menu-toggle");
+        const links = document.querySelector(".nav-links");
+        if (!toggle || !links) return;
+        toggle.addEventListener("click", () => {
+          const open = links.classList.toggle("open");
+          toggle.classList.toggle("open", open);
+        });
+        links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+          links.classList.remove("open");
+          toggle.classList.remove("open");
+        }));
+        document.addEventListener("click", e => {
+          if (!toggle.contains(e.target) && !links.contains(e.target)) {
+            links.classList.remove("open");
+            toggle.classList.remove("open");
+          }
+        });
+      });
+    </script>
+
+    <!-- MAIN -->
+    <main>
+      <section class="checkout-hero">
+        <h2 class="checkout-title">
+          MEU<br />
+          <span>CARRINHO</span>
+        </h2>
+        <a href="/site/pages/produtos/index.html" class="btn-continuar">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          Continuar comprando
+        </a>
+      </section>
+
+      <hr style="opacity:0.15" />
+
+      <section class="checkout-body">
+
+        <!-- Lista de itens -->
+        <div class="checkout-items" id="checkout-items">
+          <!-- Renderizado pelo JS -->
+        </div>
+
+        <!-- Resumo -->
+        <div class="checkout-summary">
+          <h3 class="summary-title">RESUMO DO PEDIDO</h3>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">R$0,00</span>
+          </div>
+          <div class="summary-row">
+            <span>Entrega</span>
+            <span class="delivery-info">A combinar via WhatsApp</span>
+          </div>
+
+          <hr style="opacity:0.12;margin:1.5rem 0" />
+
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="summary-total">R$0,00</span>
+          </div>
+
+          <!-- Campos do cliente -->
+          <div class="customer-fields">
+            <label>Seu nome</label>
+            <input type="text" id="customer-name" placeholder="Como podemos te chamar?" />
+
+            <label style="margin-top:1rem">Observações (opcional)</label>
+            <textarea id="customer-obs" placeholder="Ex: ponto da torra, forma de pagamento..."></textarea>
+          </div>
+
+          <!-- Botão WhatsApp -->
+          <button id="btn-whatsapp" class="btn-whatsapp" onclick="enviarParaWhatsApp()">
+            <i class="fa fa-whatsapp"></i>
+            FINALIZAR PEDIDO VIA WHATSAPP
+          </button>
+
+          <p class="whatsapp-note">
+            Você será redirecionado para o WhatsApp com seu pedido pronto para enviar.
+          </p>
+        </div>
+      </section>
+
+      <!-- Estado vazio -->
+      <div id="empty-cart" class="empty-cart" style="display:none">
+        <ion-icon name="bag-handle-outline" style="font-size:64px;color:#ccc"></ion-icon>
+        <h2>Seu carrinho está vazio</h2>
+        <p>Adicione produtos incríveis para continuar.</p>
+        <a href="/site/pages/produtos/index.html" class="btn-comprar">VER PRODUTOS</a>
+      </div>
+    </main>
+
+    <hr style="opacity:0.2;margin-top:2rem" />
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer">
+        <div><h2 style="color:#000">MON</h2><h2 style="color:#005231">CAFÉ</h2></div>
+        <div><p>2026 MonCafé. Todos os direitos reservados.</p></div>
+      </div>
+    </footer>
+
+    <script>
+      // =============================================
+      //  Checkout — Lógica principal
+      // =============================================
+
+      // ⚠️ TROQUE PELO SEU NÚMERO (código do país + DDD + número, sem espaços)
+      const WHATSAPP_NUMBER = "5511999999999";
+
+      function formatCurrency(value) {
+        return "R$" + value.toFixed(2).replace(".", ",");
+      }
+
+      function renderCart() {
+        const cart = getCart();
+        const container = document.getElementById("checkout-items");
+        const emptyEl = document.getElementById("empty-cart");
+        const bodyEl = document.querySelector(".checkout-body");
+
+        if (cart.length === 0) {
+          emptyEl.style.display = "flex";
+          bodyEl.style.display = "none";
+          return;
+        }
+
+        emptyEl.style.display = "none";
+        bodyEl.style.display = "flex";
+
+        container.innerHTML = cart.map(item => `
+          <div class="cart-item" data-id="${item.id}">
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-price-unit">${formatCurrency(item.price)} / un.</div>
+            </div>
+            <div class="cart-item-controls">
+              <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
+              <span class="qty-value">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+            </div>
+            <div class="cart-item-subtotal">${formatCurrency(item.price * item.qty)}</div>
+            <button class="remove-btn" onclick="removeItem('${item.id}')" title="Remover">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+        `).join("");
+
+        updateSummary();
+      }
+
+      function updateSummary() {
+        const total = getCartTotal();
+        document.getElementById("summary-subtotal").textContent = formatCurrency(total);
+        document.getElementById("summary-total").textContent = formatCurrency(total);
+      }
+
+      function changeQty(id, delta) {
+        const cart = getCart();
+        const item = cart.find(i => i.id === id);
+        if (!item) return;
+        const newQty = item.qty + delta;
+        if (newQty <= 0) {
+          removeItem(id);
+        } else {
+          updateItemQty(id, newQty);
+          renderCart();
+        }
+      }
+
+      function removeItem(id) {
+        removeFromCart(id);
+        renderCart();
+      }
+
+      function enviarParaWhatsApp() {
+        const cart = getCart();
+        if (cart.length === 0) {
+          alert("Seu carrinho está vazio!");
+          return;
+        }
+
+        const name = document.getElementById("customer-name").value.trim();
+        const obs = document.getElementById("customer-obs").value.trim();
+
+        if (!name) {
+          document.getElementById("customer-name").focus();
+          document.getElementById("customer-name").style.borderColor = "#e53e3e";
+          setTimeout(() => {
+            document.getElementById("customer-name").style.borderColor = "";
+          }, 2000);
+          return;
+        }
+
+        const lines = cart.map(
+          (i) => `• ${i.qty}x ${i.name} — ${formatCurrency(i.price * i.qty)}`
+        );
+        const total = formatCurrency(getCartTotal());
+
+        let msg = `Olá! Gostaria de fazer um pedido no *MonCafé* 🌿☕\n\n`;
+        msg += `*Nome:* ${name}\n\n`;
+        msg += `*Itens do pedido:*\n${lines.join("\n")}\n\n`;
+        msg += `*Total:* ${total}\n`;
+        if (obs) msg += `\n*Observações:* ${obs}\n`;
+        msg += `\nAguardo confirmação e informações sobre a entrega. Obrigado!`;
+
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+      }
+
+      // Inicializa
+      document.addEventListener("DOMContentLoaded", renderCart);
+    </script>
+  </body>
+</html>

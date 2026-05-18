@@ -332,3 +332,78 @@ body {
     margin: 0 auto;
   }
 }
+
+/*--------------------- CART BADGE ---------------------*/
+#cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #005231;
+  color: #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.65rem;
+  font-family: outfit, sans-serif;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav-cart a {
+  position: relative;
+}
+
+/*--------------------- TOAST ---------------------*/
+.toast {
+  position: fixed;
+  bottom: 110px;
+  right: 40px;
+  background: #005231;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: outfit, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  z-index: 2000;
+  box-shadow: 0 4px 16px rgba(0, 82, 49, 0.3);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*--------------------- BTN (button override) ---------------------*/
+button.btn-add-car {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 35px;
+  padding: 1.3rem 3rem;
+  background: transparent;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+  font-family: outfit, sans-serif;
+  font-weight: 600;
+  margin-top: auto;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+button.btn-add-car:hover {
+  color: #fff;
+  background-color: #005231;
+  border-color: #005231;
+}
