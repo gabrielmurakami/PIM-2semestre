@@ -23,26 +23,42 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="/site/assets/favicon.ico" />
   </head>
   <body>
     <!-- HEADER -->
     <header>
       <nav class="navbar">
-        <div style="display:flex">
-          <h2 class="navbar-title" style="color:#000">MON</h2>
-          <h2 class="navbar-title" style="color:#005231">CAFÉ</h2>
+        <div style="display: flex">
+          <h2 class="navbar-title" style="color: #000">MON</h2>
+          <h2 class="navbar-title" style="color: #005231">CAFÉ</h2>
         </div>
         <ul class="nav-links">
-          <a href="/site/index.html" style="text-decoration:none;color:#000">
+          <a href="/site/index.html" style="text-decoration: none; color: #000">
             <li class="tab-link">HOME</li>
           </a>
-          <a href="/site/pages/produtos/index.html" style="text-decoration:none;color:#000">
+          <a
+            href="/site/pages/produtos/index.html"
+            style="text-decoration: none; color: #000"
+          >
             <li class="tab-link">PRODUTOS</li>
           </a>
         </ul>
         <ul class="nav-cart">
-          <a href="/site/pages/carrinho/index.html" style="text-decoration:none;position:relative;display:flex;align-items:center">
-            <ion-icon class="tab-link" name="bag-handle-outline" style="font-size:25px;color:#005231"></ion-icon>
+          <a
+            href="/site/pages/carrinho/index.html"
+            style="
+              text-decoration: none;
+              position: relative;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <ion-icon
+              class="tab-link"
+              name="bag-handle-outline"
+              style="font-size: 25px; color: #005231"
+            ></ion-icon>
             <span id="cart-badge">0</span>
           </a>
         </ul>
@@ -62,11 +78,13 @@
           const open = links.classList.toggle("open");
           toggle.classList.toggle("open", open);
         });
-        links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-          links.classList.remove("open");
-          toggle.classList.remove("open");
-        }));
-        document.addEventListener("click", e => {
+        links.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            links.classList.remove("open");
+            toggle.classList.remove("open");
+          }),
+        );
+        document.addEventListener("click", (e) => {
           if (!toggle.contains(e.target) && !links.contains(e.target)) {
             links.classList.remove("open");
             toggle.classList.remove("open");
@@ -88,10 +106,9 @@
         </a>
       </section>
 
-      <hr style="opacity:0.15" />
+      <hr style="opacity: 0.15" />
 
       <section class="checkout-body">
-
         <!-- Lista de itens -->
         <div class="checkout-items" id="checkout-items">
           <!-- Renderizado pelo JS -->
@@ -110,7 +127,7 @@
             <span class="delivery-info">A combinar via WhatsApp</span>
           </div>
 
-          <hr style="opacity:0.12;margin:1.5rem 0" />
+          <hr style="opacity: 0.12; margin: 1.5rem 0" />
 
           <div class="summary-row total-row">
             <span>Total</span>
@@ -120,39 +137,59 @@
           <!-- Campos do cliente -->
           <div class="customer-fields">
             <label>Seu nome</label>
-            <input type="text" id="customer-name" placeholder="Como podemos te chamar?" />
+            <input
+              type="text"
+              id="customer-name"
+              placeholder="Como podemos te chamar?"
+            />
 
-            <label style="margin-top:1rem">Observações (opcional)</label>
-            <textarea id="customer-obs" placeholder="Ex: ponto da torra, forma de pagamento..."></textarea>
+            <label style="margin-top: 1rem">Observações (opcional)</label>
+            <textarea
+              id="customer-obs"
+              placeholder="Ex: ponto da torra, forma de pagamento..."
+            ></textarea>
           </div>
 
           <!-- Botão WhatsApp -->
-          <button id="btn-whatsapp" class="btn-whatsapp" onclick="enviarParaWhatsApp()">
+          <button
+            id="btn-whatsapp"
+            class="btn-whatsapp"
+            onclick="enviarParaWhatsApp()"
+          >
             <i class="fa fa-whatsapp"></i>
             FINALIZAR PEDIDO VIA WHATSAPP
           </button>
 
           <p class="whatsapp-note">
-            Você será redirecionado para o WhatsApp com seu pedido pronto para enviar.
+            Você será redirecionado para o WhatsApp com seu pedido pronto para
+            enviar.
           </p>
         </div>
       </section>
 
       <!-- Estado vazio -->
-      <div id="empty-cart" class="empty-cart" style="display:none">
-        <ion-icon name="bag-handle-outline" style="font-size:64px;color:#ccc"></ion-icon>
+      <div id="empty-cart" class="empty-cart" style="display: none">
+        <ion-icon
+          name="bag-handle-outline"
+          style="font-size: 64px; color: #ccc"
+        ></ion-icon>
         <h2>Seu carrinho está vazio</h2>
         <p>Adicione produtos incríveis para continuar.</p>
-        <a href="/site/pages/produtos/index.html" class="btn-comprar">VER PRODUTOS</a>
+        <a href="/site/pages/produtos/index.html" class="btn-comprar"
+          >VER PRODUTOS</a
+        >
       </div>
     </main>
 
-    <hr style="opacity:0.2;margin-top:2rem" />
+    <hr style="opacity: 0.2; margin-top: 2rem" />
 
     <!-- FOOTER -->
     <footer>
       <div class="footer">
-        <div><h2 style="color:#000">MON</h2><h2 style="color:#005231">CAFÉ</h2></div>
+        <div>
+          <h2 style="color: #000">MON</h2>
+          <h2 style="color: #005231">CAFÉ</h2>
+        </div>
         <div><p>2026 MonCafé. Todos os direitos reservados.</p></div>
       </div>
     </footer>
@@ -162,7 +199,6 @@
       //  Checkout — Lógica principal
       // =============================================
 
-      // ⚠️ TROQUE PELO SEU NÚMERO (código do país + DDD + número, sem espaços)
       const WHATSAPP_NUMBER = "5511999999999";
 
       function formatCurrency(value) {
@@ -184,7 +220,9 @@
         emptyEl.style.display = "none";
         bodyEl.style.display = "flex";
 
-        container.innerHTML = cart.map(item => `
+        container.innerHTML = cart
+          .map(
+            (item) => `
           <div class="cart-item" data-id="${item.id}">
             <div class="cart-item-info">
               <div class="cart-item-name">${item.name}</div>
@@ -200,20 +238,24 @@
               <ion-icon name="trash-outline"></ion-icon>
             </button>
           </div>
-        `).join("");
+        `,
+          )
+          .join("");
 
         updateSummary();
       }
 
       function updateSummary() {
         const total = getCartTotal();
-        document.getElementById("summary-subtotal").textContent = formatCurrency(total);
-        document.getElementById("summary-total").textContent = formatCurrency(total);
+        document.getElementById("summary-subtotal").textContent =
+          formatCurrency(total);
+        document.getElementById("summary-total").textContent =
+          formatCurrency(total);
       }
 
       function changeQty(id, delta) {
         const cart = getCart();
-        const item = cart.find(i => i.id === id);
+        const item = cart.find((i) => i.id === id);
         if (!item) return;
         const newQty = item.qty + delta;
         if (newQty <= 0) {
@@ -241,7 +283,8 @@
 
         if (!name) {
           document.getElementById("customer-name").focus();
-          document.getElementById("customer-name").style.borderColor = "#e53e3e";
+          document.getElementById("customer-name").style.borderColor =
+            "#e53e3e";
           setTimeout(() => {
             document.getElementById("customer-name").style.borderColor = "";
           }, 2000);
@@ -249,7 +292,7 @@
         }
 
         const lines = cart.map(
-          (i) => `• ${i.qty}x ${i.name} — ${formatCurrency(i.price * i.qty)}`
+          (i) => `• ${i.qty}x ${i.name} — ${formatCurrency(i.price * i.qty)}`,
         );
         const total = formatCurrency(getCartTotal());
 
